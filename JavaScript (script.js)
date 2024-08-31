@@ -1,0 +1,23 @@
+const menu=[
+    {
+        id: 1, name:"Pizza", price: 15, image:"Pizza.jpg"
+    },
+    {
+        id: 2, name:"Burger", price: 10, image: "Burger.jpg"
+    },
+    {
+        id: 3, name:"Shawarma", price: 8, image: "Shawarma.jpg"
+    }
+];
+
+const menuGrid= document.querySelector(".menu-grid");
+menu.forEach(items=>{
+    const menuItem= document.createElement("div");
+    menuItem.classList.add("menu-item");
+    menuItem.innerHTML= '<img src= "${item.image}" alt="${item.name}">
+    <h3>${item.name}</h3>
+    <p>$${item.price}</p>
+    <button> ADD to Cart</button>
+    ';
+    menuGrid.appendChild(menuItem);
+});

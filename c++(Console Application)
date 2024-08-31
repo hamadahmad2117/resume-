@@ -1,0 +1,11 @@
+#include<iostream>
+#include<vector>
+#include<string>
+strut FoodItem{
+    std::string name;
+    int price;
+    std::string image;
+};
+void displayMenu(conststd::vector<FoodItem>&menu){
+    for(const auto&item : menu)
+}

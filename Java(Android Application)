@@ -1,0 +1,30 @@
+import androidx.appcompart.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.GridView;
+import java.util.ArrayList;
+public class MainActivity extends
+AppCompatActivity{
+    private ArrayList<FoodItem>menu;
+    @Override
+    protected void onCreate(BundlesavedInstanceState){
+        super.onCreate(savedInstanceState);
+        steContentView(R.layout.activity_main);
+        menu = new ArrayList<>();
+        menu.add(new FoodItem("Pizza", 15, R.drawable.pizza));
+        menu.add(new FoodItem("Burger", 10, R.drawable.burger));
+        menu.add(new FoodItem("Shawarma", 8, R.drawable.Shawarma));
+        GridView gridView =
+        findViewById(R.Id.grid_view);
+        gridView.setAdapter(newFoodAdapter(this, menu));
+    }
+}
+class FoodItem{
+    String name;
+    int price;
+    int image;
+    public FoodItem(String name, int price, int image){
+        this.name = name;
+        this.price = price;
+        this.image = image;
+    }
+}
